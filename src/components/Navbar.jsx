@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import {assets} from "../assets/assets"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import{NavLink} from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import SearchBar from './SearchBar'
@@ -10,18 +10,9 @@ import SearchBar from './SearchBar'
 const Navbar= () => {
   const [visible, setVisible] = useState(false)
   const {showSearch, setShowSearch, getCartCount} = useContext(ShopContext)
+  const location = useLocation();
 
-  // const [items, setItems] = useState()
-
-  //     // I had to create this function to get the data from the "getCartcount" because function can not be the direct child of the react component 
-
-  // const getItems = () => {
-  //   setItems(getCartCount)
-  // };
   
-  // useEffect(()=>{
-  //   getItems()
-  // }, [getCartCount])
 
   return (
     <div className='flex gap-2 items-center justify-between py-5 font-medium'>
@@ -58,14 +49,14 @@ const Navbar= () => {
         
         </ul>
         {
-          showSearch ? <SearchBar/> : null
+          showSearch && location.pathname === '/collection' ? <SearchBar/> : null
         }
                         
                         {/* Right Part */}
         <div className='flex items-center gap-6'>
                       
                          {/* search Icon */}
-            <img onClick={()=>{setShowSearch(!showSearch)}} src={assets.search_icon} className='w-5 hover:w-6 cursor-pointer sm:hidden' alt="" />
+           <NavLink to={'./collection'}> <img onClick={()=>{setShowSearch(!showSearch)}} src={assets.search_icon} className='sm:w-6 w-5 cursor-pointer ' alt="" /></NavLink>
 
                       {/* Profile_Icon_Group */}
             <div className='group w-8'>

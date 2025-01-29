@@ -16,16 +16,22 @@ import Footer from './components/Footer'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SmallSearchBar from './components/SmallSearchBar'
+import { useContext } from 'react'
+import { ShopContext } from './context/ShopContext'
 
 
 
 const App = () => {
+
+  const {location} = useContext(ShopContext)
   
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       <ToastContainer/>
       <Navbar/>
-      <SmallSearchBar/>
+      {
+        location.pathname === '/collection' ? <SmallSearchBar/> : null
+      }
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
