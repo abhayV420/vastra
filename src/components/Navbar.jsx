@@ -86,10 +86,10 @@ const Navbar= () => {
                         <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
                         <p className=''>Back</p>
                       </div>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='/'>HOME</NavLink>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='collection'>COLLECTION</NavLink>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='about'>ABOUT</NavLink>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='CONTACT'>CONTACT</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border text-center hover:bg-red-800 hover:text-white' to='/'>HOME</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border text-center hover:bg-red-800 hover:text-white' to='collection'>COLLECTION</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border text-center hover:bg-red-800 hover:text-white' to='about'>ABOUT</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border text-center hover:bg-red-800 hover:text-white' to='CONTACT'>CONTACT</NavLink>
                     </div>
 
                   </div>
