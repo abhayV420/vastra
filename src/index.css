@@ -30,8 +30,9 @@ a.active{
   font-style: normal;
 }
 
-.hehe a.active{
-  background-color: orange;
+.sideBar a.active{
+  border-radius: 10px;
+  background-color: brown;
   color: white;
 }
 
