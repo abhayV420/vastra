@@ -79,17 +79,17 @@ const Navbar= () => {
         </div>
 
                   {/* SideBar menu for Smaller screens */}
-                  <div className={`sideBar absolute lg:hidden top-8 right-5 bottom-0 rounded-lg h-[27%] overflow-hidden bg-white transition-all ${visible ? 'w-1/2': 'w-0'}`}>
+                  <div className={`sideBar absolute top-4 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full': 'w-0'}`}>
 
                     <div className='flex flex-col text-gray-600'>
                       <div onClick={()=>{setVisible(false)}} className='flex items-center gap-4 p-3 group hover:cursor-pointer'>
                         <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
                         <p className=''>Back</p>
                       </div>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border rounded-lg text-center hover:bg-red-800 hover:text-white' to='/'>HOME</NavLink>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border rounded-lg text-center hover:bg-red-800 hover:text-white' to='collection'>COLLECTION</NavLink>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border rounded-lg text-center hover:bg-red-800 hover:text-white' to='about'>ABOUT</NavLink>
-                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 border rounded-lg text-center hover:bg-red-800 hover:text-white' to='CONTACT'>CONTACT</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='/'>HOME</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='collection'>COLLECTION</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='about'>ABOUT</NavLink>
+                      <NavLink onClick={()=>{setVisible(false)}} className='py-3 pl-6 border text-center hover:bg-red-800 hover:text-white' to='CONTACT'>CONTACT</NavLink>
                     </div>
 
                   </div>
