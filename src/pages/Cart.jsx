@@ -3,10 +3,13 @@ import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import CartTotal from './CartTotal';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity, navigate } = useContext(ShopContext);
-  const [cartData, setCartData] = useState([])
+  const [cartData, setCartData] = useState([]);
+
+  
 
   useEffect(()=>{
     const tempData = [];
@@ -59,7 +62,7 @@ const Cart = () => {
         <div className='w-full sm:w-[450px]'>
           <CartTotal/>
           <div className='w-full text-end'>
-            <button onClick={()=>navigate('/place-order')} className='bg-black text-white text-sm my-8 px-8 py-3'>PROCEED TO CHECKOUT</button>
+            <button onClick={()=>cartData.length > 0 ? navigate('/place-order') : toast.error('The cart is empty')} className='bg-black text-white text-sm my-8 px-8 py-3'>PROCEED TO CHECKOUT</button>
           </div>
         </div>
 
