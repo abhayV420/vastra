@@ -22,7 +22,7 @@ const About = () => {
 
             <div className='text-center'>
                 <b className='text-gray-800'>Our Mission</b>
-                <p>My mission is to get the Job and yours is to give 😊</p>
+                <p>Our mission is to make everyone wear our clothes, "By any means necessary" 😊</p>
             </div>
         </div>
       </div>
