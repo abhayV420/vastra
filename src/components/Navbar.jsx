@@ -29,7 +29,7 @@ const Navbar= () => {
 
            </NavLink>
 
-           <NavLink to='collectionn' className='flex flex-col hover:text-purple-900 items-center gap-1 '>
+           <NavLink to='collection' className='flex flex-col hover:text-purple-900 items-center gap-1 '>
             <p>COLLECTION </p>
             <hr className='w-2/4 border-none h-[2.0px] bg-gray-700 hidden' />
 
