@@ -252,6 +252,7 @@ import cod_icon from './cod_icon.png'
 import authentic_icon from './authentic_icon.png'
 import sale from './20off.jpg'
 import slideone from './slideone.jpg'
+import google_logo from './google_logo.png'
 
 export const assets = {
     logo,
@@ -273,7 +274,8 @@ export const assets = {
     cod_icon,
     authentic_icon,
     sale,
-    slideone
+    slideone,
+    google_logo
 }
 
 export const products = [

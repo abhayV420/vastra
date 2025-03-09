@@ -10,16 +10,15 @@ const ShopContextProvider = (props) =>{
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
-    const navigate = useNavigate()
-    const location = useLocation()
+    const navigate = useNavigate();
+    const location = useLocation();
+    
    
 
     const addToCart = async (itemId, size) => {
         if(!size) {
             toast.error("Select Products Size")
             return;
-        }else{
-            toast.success("Product has been added successfully")
         }
        let cartData = structuredClone(cartItems)
 
@@ -86,7 +85,7 @@ useEffect(()=>{
         products, currency, delivery_fee,
         search, setSearch, showSearch, setShowSearch,
         cartItems, addToCart, getCartCount, updateQuantity,
-        getCartAmount, navigate, location
+        getCartAmount, navigate, location,
     }
     return (
         <ShopContext.Provider value={value}>
