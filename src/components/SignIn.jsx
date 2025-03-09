@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { FirebaseContext } from '../context/FirebaseContext'
 
-function Signin() {
+function SignIn() {
     const {setLoginState, setEmail, setPassword, email, password} = useContext(FirebaseContext)
   return (
     <div className='flex flex-col sm:min-w-[350px] min-w-200px gap-1 '>
@@ -17,4 +17,4 @@ function Signin() {
   )
 }
 
-export default Signin
+export default SignIn

@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import Signin from '../components/Signin';
+import SignIn from '../components/SignIn';
 import SignUp from '../components/SignUp';
 import { FirebaseContext } from '../context/FirebaseContext';
 import { assets } from '../assets/assets';
@@ -19,7 +19,7 @@ if(user === null){
         <hr className='border-none h-[1.5px] w-8 bg-gray-800 ' />
       </div>
 
-      {loginState === 'Login' ? <Signin/> : <SignUp/>}
+      {loginState === 'Login' ? <SignIn/> : <SignUp/>}
 
       <button onClick={loginState === "SignUp" ? ()=>signUpUserWithEmailAndPassword(email, password) : ()=>loginUserWithEmailAndPassword(email, password) } className='bg-black text-white font-light px-8 py-2 mt-4'> {loginState === 'Login' ? 'Sign In' : 'Sign Up'} </button>
 
