@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import SmallSearchBar from './components/SmallSearchBar'
 import { useContext } from 'react'
 import { ShopContext } from './context/ShopContext'
+import Protected from './components/Protected'
 
 
 
@@ -37,10 +38,10 @@ const App = () => {
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/collection' element={<Collection/>} />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/cart' element={<Protected Component={Cart}/>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='/orders' element={<Orders/>} />
-        <Route path='/place-order' element={<PlaceOrder/>} />
+        <Route path='/orders' element={<Protected Component={Orders} />} />
+        <Route path='/place-order' element={<Protected Component={PlaceOrder}/> } />
         <Route path='/product/:productId' element={<Product/>} />
       </Routes>
       <Footer/>

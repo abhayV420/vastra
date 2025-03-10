@@ -28,7 +28,9 @@ const Firebaseprovider = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginState, setLoginState] = useState('Login');
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
+
+    
 
     useEffect(()=> {
         onAuthStateChanged(firebaseAuth, user => {

@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import {assets} from "../assets/assets"
 import RelatedProducts from '../components/RelatedProducts'
+import { FirebaseContext } from '../context/FirebaseContext'
 
 const Product = () => {
   const {productId} = useParams()
   const {products, currency, addToCart} = useContext(ShopContext)
+  const {user} = useContext(FirebaseContext)
   const [productData, setProductData] = useState()
   const [image, setImage] = useState('')
   const [random, setRandom] = useState(Math.floor(Math.random()*99 + 133))
-  const [size, setSize] = useState('')
+  const [size, setSize] = useState('');
+  const navigate = useNavigate()
 
   const fetchProductData = async () => {
     products.map((item)=>{
@@ -74,7 +77,12 @@ const Product = () => {
 
                               {/*------------------------- Add To Cart -----------------------------  */}
 
-          <button onClick={()=>addToCart(productData._id, size)} className='bg-yellow-500 hover:bg-white hover:text-black border-yellow-700 border transition-all duration-500 rounded-lg text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+          <button onClick={()=>{
+            if(!user){
+              navigate('/login')
+            }else{ addToCart(productData._id, size)}
+              
+          }} className='bg-yellow-500 hover:bg-white hover:text-black border-yellow-700 border transition-all duration-500 rounded-lg text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
           <hr className='mt-8 sm:w-4/5 h-[2px] bg-gray-300 ' />
 
                                {/* --------------------------- Lies ------------------------------- */}
